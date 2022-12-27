@@ -12,7 +12,7 @@ darkMode =()=>{
 
 inputSlider.oninput = (()=>{
     let value = inputSlider.value;
-    slideValue.textContent = value
+    slideValue.textContent = value +' Km';
     const somaMilhaAzul = value * 1.1 .toFixed(0);
     const somaMilhaGol = value * 3 .toFixed(0);
     const somaMilhaLatam = value * 2 .toFixed(0);
