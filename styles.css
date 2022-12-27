@@ -1,0 +1,262 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(img/img3.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: 0.5s;
+   
+}
+body.dark{
+    background-image: url(img/img4.webp);
+   
+}
+
+.container{
+    position: relative;
+    background-color:#fff;
+    align-items: center;
+    border-radius: 24px;
+    padding: 48px;
+    display: flex;
+    max-width: 1216px;
+    margin: 48px;
+    box-shadow: 0px 0px 20px #fff;
+    overflow: hidden;
+    transition: 0.5;
+}
+body.dark .container{
+    background-color: #222;
+}
+
+.bolhas{
+   position: absolute;
+    background-color: rgb(1, 133, 241);
+    z-index: 0;
+    width: 90px;
+    height: 90px;
+    opacity: 0.2;
+    border-radius: 50%;
+    animation: bolha 10s linear infinite;
+    transition: .5s;
+}
+.bolhas2{
+    position: absolute;
+     background-color: rgb(1, 133, 241);
+     z-index: 0;
+     width: 90px;
+     height: 90px;
+     opacity: 0.1;
+     border-radius: 50%;
+     animation: bolha2 5s linear infinite;
+     transition: .5s;
+ }
+
+@keyframes bolha{
+ 0%{
+    right: 10px;
+    top: 50px;
+  }
+
+  50%{
+    bottom: 0;
+    top: 300px;
+    
+  }
+  100%{
+    top: 0;
+    right: 100%;
+  }
+    
+}
+@keyframes bolha2{
+    0%{
+       left: 100px;
+       bottom: 50px;
+     }
+   
+     50%{
+     bottom: 100px;
+       
+     }
+     100%{
+        left: 100px;
+        bottom: 50px;
+     }
+       
+   }
+
+.content-left{
+    z-index: 1;
+    width: 50%;
+    padding: 24px;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+}
+.content-right{
+    z-index: 2;
+    width: 50%;
+    padding: 24px;
+    position: relative;
+}
+
+.content-right img{
+    width: 100%;
+    border-radius: 24px;
+    height: 300px;
+    transition: 0.5;
+   
+}
+.content-right img:nth-last-child(1){
+   display: none;
+   
+}
+body.dark .content-right img:nth-last-child(1){
+    display: flex;
+}
+body.dark .content-right img:nth-last-child(2){
+    display: none;
+}
+
+.content-left h4{
+    font-size: 32px;
+    color: rgb(1, 133, 241);
+    
+}
+
+body.dark .content-left h4{
+    color: #fff;
+}
+
+
+.content-left h5{
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(90, 91, 91);
+    
+}
+body.dark .content-left h5{
+    color: #fff;
+}
+
+.simulator{
+    padding-top: 12px;
+    text-align: center;
+    color:  rgb(1, 133, 241);
+    
+}
+body.dark .simulator{
+    color: #fff;
+}
+.simulator h3{
+    font-size: 34px;
+}
+.valor{
+    font-size: 22px;
+    font-weight: bold;
+    
+}
+.slider{
+    margin: 12px 0;
+    width: 100%;
+}
+.slider input{
+    width: 100%;
+
+}
+
+#conteudo{
+    width: 100%;
+}
+.conteudo-txt{
+    font-size: 18px;
+    color:  rgb(1, 133, 241);
+    font-weight: bold;
+    line-height: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+body.dark .conteudo-txt{
+    color: #fff;
+}
+.conteudo-txt span{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+}
+
+.mode-toogle{
+    text-align: center;
+    color:  rgb(1, 133, 241);
+    font-weight: bold;
+    font-size: 28px;
+    margin: 24px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+body.dark .mode-toogle{
+    color: #fff;
+}
+
+.toogle{
+     width: 65px;
+    height: 30px;
+    position: relative;
+    background: #ccc;
+    border-radius: 40px;
+    align-items: center;
+    box-shadow: 0 0 10px #000;
+    cursor: pointer;
+    
+    
+}
+.toogle::before{
+    content: '';
+    position: absolute;
+    color:  #fff;
+    text-align: center;
+    align-items: center;
+    width:25px;
+    height: 25px;
+    left: 10px;
+    top: 2.5px;
+    border-radius: 50px;
+    background-color: rgb(1, 133, 241);
+    z-index: 10;
+    transition: 0.5s;
+}
+
+body.dark .toogle::before{
+    left: 35px;
+    background-color: #222;
+}
+
+
+@media(max-width:1000px){
+    .container{
+        flex-direction: column;
+    }
+    .content-left{
+        width: 100%;
+    }
+    .content-right{
+        width: 100%;
+    }
+}
+
+input[type=range]{
+    background-color: #222;
+    color: #222;
+}
